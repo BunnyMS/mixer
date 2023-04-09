@@ -1,0 +1,651 @@
+/*----------------------------
+	   mixer styles
+-----------------------------*/
+
+.mixer .interface * {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+    -o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: Arial, "sans-serif";
+	box-sizing: unset;
+}
+
+.mixer {
+	width: 100%;
+	max-width: 1053px;
+    margin: 0 auto;
+	margin-top: 35px;
+    overflow-y: hidden;
+    color: #9696a7;
+}
+.mixer .mobile-overlay {
+	position: absolute;
+	top: 0px; bottom: 0px;
+	left: 0px; right: 0px;
+	background-color: #000000;
+	opacity: 0.8;
+	z-index: 99999;
+}
+.mixer .overlay-container { display: table; width: 100%; height: 100%; }
+.mixer .mobile-overlay p {
+	display: table-cell;
+	color: #FFFFFF;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mixer-wrapper {
+	padding: 0px 100px;
+}
+.mixer .interface .interface-container img {
+	display: block;
+	width: 100%;
+}
+.mixer .interface .interface-container img.mixer-interface {
+    position: absolute;
+}
+.mixer .interface {
+	position: relative;
+	width: 100%; height: 100%;
+}
+.mixer .interface .mixer-demo, .mixer .interface input[type="range"] { display: none; }
+
+.mixer .interface .channels {
+	width: 79.5%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: .5%;
+}
+.mixer .interface .channel {
+	float: left;
+	position: relative;
+	width: 12.45%;
+	height: 100%;
+	overflow: hidden;
+}
+.mixer .interface .channel .channel-container {
+    position: relative;
+	width: 100%;
+    height: 60%;
+    top: 28%;
+}
+.mixer .interface .channel:not(:last-child) .channel-container:after {
+	display: block;
+	content: "";
+	position: absolute;
+	width: 1px;
+	border-radius: 1;
+	top: 2%;
+	right: 0px;
+	height: 96%;
+	background-color: #454646;
+}
+
+/*
+.mixer .interface .master-controls {
+	position: absolute;
+	top: 27%;
+	right: 3%;
+	width: 15%;
+	height: 57%;
+}
+*/
+
+.mixer .interface .master-gain {
+	position: absolute;
+	bottom: 4%;
+	right: 3%;
+	width: 15%;
+	height: 40%;
+	z-index: 100;
+    user-select: none;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+}
+
+.mixer .interface .master-gain-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+    user-select: none;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+}
+
+.mixer .interface .master-gain-inner {
+	position: absolute;
+	min-width: 135px;
+	height: 135px;
+	width: 100%;
+	left: 50%;
+	top: 50%;
+	background: url('../images/mixer_master-gain_sprite_1@2x.png') center no-repeat;
+	background-size: 135px auto;
+	background-position-x: center;
+	transform-origin: left top;
+    user-select: none;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+}
+
+
+
+.mixer .interface .knob {
+	position: relative;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+    cursor: grab;
+}
+
+.mixer .interface .knob .top {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	cursor: default !important;
+}
+
+.mixer .interface .mixer-button {
+	position: absolute;
+	margin: 0px; padding: 0px;
+	top: 38%;
+	width: 54%; height: 9%;
+	max-width: 58px;
+	max-height: 58px;
+	background: url('../images/3d-mixer_button_1@2x.png') center no-repeat;
+	background-size: 110% auto;
+	cursor: pointer;
+}
+.mixer .interface .mixer-button.solo { left: -3%; }
+.mixer .interface .mixer-button.mute { right: -2%; }
+.mixer .interface .mixer-button.active {
+	background: url('../images/3d-mixer_button_on_1@2x.png') center no-repeat;
+	background-size: 110% auto;
+}
+.mixer .interface .mixer-button.active:after {
+	display: block;
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	content: "";
+	bottom: 12%;
+	left: 50%;
+	transform: translate(-50%);
+}
+.mixer .interface .mixer-button.solo.active:after {
+	background: url('../images/3d-mixer_solo_on_1@2x.png') no-repeat;
+	background-size: 5px 5px;
+}
+.mixer .interface .mixer-button.mute.active:after {
+	background: url('../images/3d-mixer_cut_on_1@2x.png') no-repeat;
+	background-size: 5px 5px;
+}
+
+.mixer .interface .pan {
+	position: absolute;
+	min-width: 63px;
+	min-height: 63px;
+	height: 12%;
+	top: 26%;
+	left: 50%;
+	background: url('../images/mixer_pan_sprite_1@2x.png') no-repeat;
+	background-size: 63px auto;
+	background-position-x: center;
+	transform: scale(0.7) translate(-50%);
+	transform-origin: top left;
+}
+	
+.mixer .interface .knob {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 55%;
+	height: 55%;
+}
+
+.mixer .interface .master-gain .knob {
+	width: 60%;
+	height: 60%;
+}
+
+
+.mixer .interface .knob [draggable] {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+
+
+.mixer .interface .volume {
+	position: absolute;
+	width: 70%;
+	height: 40%;
+	top: 45%;
+	left: 15%;
+	background: url('../images/mixer_channel-labels_1@2x.png') left center no-repeat;
+	background-size: auto 75%;
+}
+
+
+.mixer .interface .volume .rangeslider {
+	display: block;
+	position: relative;
+}
+
+.mixer .interface .volume .rangeslider--vertical {
+	width: 20px;
+	min-height: 100%;
+	height: 100%;
+}
+
+.mixer .interface .volume .rangeslider--vertical .rangeslider__handle {
+  left: -10px;
+  touch-action: pan-x;
+  -ms-touch-action: pan-x;
+}
+
+
+.mixer .interface .slider-container {
+	position: relative;
+	height: 100%;
+	width: 25px;
+	margin: 0 auto;
+}
+
+.mixer .interface .channel .slider-container .rangeslider__handle {
+	display: inline-block;
+	position: absolute;
+	left: 2px;
+	width: 100%;
+	height: 46px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.mixer .interface .channel .slider-container .rangeslider__handle .handle-inner {
+	position: absolute;
+	left: -30px;
+	width: 90px;
+	height: 90px;
+	background-color: transparent;
+	background: url('../images/mixer_fader_1@2x.png') no-repeat;
+	background-size: 100px auto;
+	background-position: 9px 2px;
+	margin-top: -5px;
+}
+
+
+.mixer .interface .channel h6.track-title {
+	position: absolute;
+	bottom: 11.5%;
+	font-size: 10px;
+	font-weight: 500;
+	color: #42415c;
+	text-align: center;
+	width: 90%;
+	padding: 0% 5%;
+	text-transform: uppercase;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+.mixer .meters {
+	display: block;
+	position: absolute;
+	top: 4%;
+	left: 25%;
+	width: 52%;
+	height: 18%;
+}
+.mixer .interface .meter-container {
+	position: relative;
+	width: 100%; height: 100%;
+	background: url('../images/mixer_channel-meter-labels_1@2x.png') center no-repeat;
+	background-size: auto 95%;
+}
+.mixer .interface .meters .meter {
+	position: absolute;
+	background: url('../images/mixer_channel-meter_1@2x.png') bottom center no-repeat;
+	background-size: 100% auto;
+    width: 4px;
+	height: 100%;
+}
+.mixer .interface .meters .meter-right { right: 0px; }
+
+.mixer .interface .meters .meter-fill {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+    bottom: 0px;
+	background: url('../images/mixer_channel-meter-fill_1@2x.png') bottom center no-repeat;
+	background-size: 4px auto;
+}
+.mixer .interface .meter-fill.meter-right {
+	left: 34px;
+}
+
+.mixer .interface .master-controls .meters {
+	width: 5%;
+	height: 28%;
+	top: 34%;
+	left: auto;
+	right: 7.9%;
+}
+.mixer .interface .master-controls .meters .meter-container {
+	background: url('../images/mixer_master-meter-labels_1@2x.png') center no-repeat;
+	background-size: auto 95%;
+}
+.mixer .interface .master-controls .meters .meter {
+	background: url('../images/mixer_master-meter_1@2x.png') bottom center no-repeat;
+	background-size: 100% auto;
+}
+.mixer .interface .master-controls .meters .meter-fill {
+	background: url('../images/mixer_master-meter-fill_1@2x.png') bottom center no-repeat;
+	background-size: 4px auto;
+}
+.mixer .interface .master-controls .meters .meter-fill.meter-right {
+	left: 40.5px;
+}
+
+.mixer .interface .channel:not(.loaded) .meters .meter-fill {
+	height: 0px !important;
+}
+.mixer .interface .master-controls .meters .meter-fill, .mixer .interface .channel.loaded .meters .meter-fill {
+	min-height: 2px;
+}
+
+.mixer .interface .media {
+	position: absolute;
+	width: 19.5%;
+	height: 26%;
+	top: 0px;
+	right: .5%;
+}
+.mixer .interface .media p {
+	font-size: 9px;
+}
+.mixer .interface .media .media-container {
+	position: relative;
+	padding: 10%;
+	height: 80%;
+}
+.mixer .interface .media .duration-container {
+	position: absolute;
+	top: 45%;
+	width: 80%;
+}
+.mixer .interface .media .duration-container p.duration-current { float: left; }
+.mixer .interface .media .duration-container p.duration-total { float: right; }
+
+.mixer .interface .media .media-play {
+	display: block;
+	width: 13px;
+	height: 15px;
+	background: url('../images/3d-mixer_play_1@2x.png') top center no-repeat;
+	background-size: 13px auto;
+}
+.mixer .interface .media .media-controls {
+	position: absolute;
+	top: 67%;
+	width: 80%;
+	margin: 0 auto;
+}
+.mixer .interface .media .media-controls .media-controls-container {
+	position: relative;
+	padding: 5%;
+	width: 90%;
+	height: 100%;
+	min-height: 24px;
+}
+.mixer .interface .media .media-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	cursor: pointer;
+}
+.mixer .interface .media .media-play.is-playing {
+	width: 17px;
+	height: 16px;
+	background: url('../images/3d-mixer_pause_1@2x.png') top center no-repeat;
+	background-size: 12px auto;
+}
+.mixer .interface.loading .media .media-play {
+	width: 25px;
+	height: 25px;
+	background: url('../images/loading5@2x.gif') center no-repeat;
+	background-size: 40px auto;
+}
+
+.mixer .interface .media .media-rewind, .mixer .interface .media .media-forward {
+	display: block;
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	top: 50%;
+	transform: translate(0%,-50%);
+	cursor: pointer;
+}
+.mixer .interface .media .media-rewind {
+	left: 5%;
+	background: url('../images/3d-mixer_rewind_1@2x.png') top center no-repeat;
+	background-size: 14px auto;
+}
+.mixer .interface .media .media-forward {
+	right: 5%;
+	background: url('../images/3d-mixer_forward_1@2x.png') top center no-repeat;
+	background-size: 14px auto;
+}
+
+.mixer .interface .media .media-title {
+	position: absolute;
+	text-align: center;
+	top: 10%;
+	width: 80%;
+}
+
+.mixer .interface .media .media-title h4, .mixer .interface .media .media-title h5 {
+	font-weight: normal;
+	margin-bottom: 5px;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.interface .media .title-select {
+    height: 20px;
+    line-height: 20px;
+}
+.mixer .interface .media .media-title h4, .mixer .interface .media .title-select span { font-size: 13px; color: #FFFFFF; margin: 0px; }
+.mixer .interface .media .media-title h5 { font-size: 10px; color: #9696a7; margin: 0px; }
+
+.mixer .interface .progress-bar-container, .mixer .interface .progress-marker-container {
+	position: relative;
+}
+.mixer .interface .progress-bar-container {
+	padding-top: 18px;
+	height: 5px;
+	cursor: pointer;
+	width: 100%;
+}
+
+.mixer .interface .progress-track, .mixer .interface .progress-bar {
+	position: absolute;
+	background-color: #50506a;
+	top: 75%;
+	width: 100%;
+	height: 1px;
+}
+.mixer .interface .progress-bar {
+	background-color: #FFFFFF;
+	width: 0px;
+	min-width: 8px;
+	max-with: 100%;
+}
+
+
+.mixer .interface .progress-marker {
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: -3.5px;
+	width: 8px;
+	height: 8px;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+}
+
+/* === SMALL === */
+.mixer.small .interface .pan {
+	top: 27%;
+}
+
+
+/* === MEDIUM === */
+
+.mixer.medium .mobile-overlay {
+	display: none;
+}
+.mixer.medium .interface .channel h6.track-title {
+	font-size: 12px;
+}
+
+.mixer.medium .interface .media .duration-container {
+	top: 45%;
+}
+
+.mixer.medium .interface .media p {
+	font-size: 10px;
+}
+
+
+.mixer.medium .interface .pan {
+	transform: scale(0.85) translate(-50%);
+}
+
+.mixer.medium .interface .mixer-button {
+	top: 38%;
+}
+
+
+.mixer.medium .interface .media .media-title h4, .mixer.medium .interface .media .title-select span { font-size: 14px; color: #FFFFFF; margin: 0px; }
+.mixer.medium .interface .media .media-title h5 { font-size: 11px; color: #9696a7; margin: 0px; }
+
+/* === LARGE === */
+
+.mixer.large .interface .media .title-select {
+    height: 30px;
+    line-height: 30px;
+}
+
+.mixer.large .interface .media .media-title h4, .mixer.large .interface .media .title-select span { margin-bottom: 5px; font-size: 15px; }
+.mixer.large .interface .media .title-select span { margin-bottom: 0px; }
+.mixer.large .interface .media .media-title h5 { font-size: 12px; }
+
+.mixer.large .interface .channel h6.track-title {
+	font-size: 14px;
+    margin: 0px;
+}
+
+
+.mixer.large .interface .progress-bar-container {
+	padding-top: 23px;
+}
+
+.mixer.large .interface .media .media-play {
+	width: 19px;
+	height: 22px;
+	background-size: 19px auto;
+}
+.mixer.large .interface .media p {
+	font-size: 11px;
+    margin: 0px;
+}
+.mixer.large .interface.loading .media .media-play {
+	width: 50px;
+	height: 50px;
+	background-size: 50px auto;
+}
+
+.mixer.large .interface .media .media-play.is-playing {
+	height: 22px;
+}
+
+.mixer.large .interface .meters .meter { width: 6px; }
+.mixer.large .interface .meters .meter-fill { background-size: 6px auto; }
+
+
+.mixer.large .interface .pan {
+	top: 28%;
+	width: 63px;
+	height: 63px;
+	transform: scale(1) translate(-50%);
+}
+
+.mixer.large .interface .master-gain {
+	margin: 0px;
+	bottom: 4%;
+}
+.mixer.large .interface .master-gain-inner {
+
+	
+}
+
+.mixer.large .interface .volume {
+	height: 39%;
+	top: 47%;
+	background-size: auto 85%;
+}
+
+.mixer.large .interface .channel .slider-container .rangeslider__handle .handle-inner {
+	width: 90px;
+	height: 100px;
+	background-size: 135px auto;
+	background-position: -2px -8px;
+}
+
+.mixer.large .interface .mixer-button {
+	top: 39%;
+	height: 8%;
+}
+
+/* === LARGEST === */
+/*
+.mixer.largest .interface .media .media-title h4 { font-size: 20px; }
+*/
+.mixer.largest .interface .media .title-select {
+    height: 35px;
+    line-height: 35px;
+}
+
+.mixer.largest .interface .media .media-title h5 { font-size: 13px; }
+
+.mixer.largest .interface .channel .pan {
+	top: 28.7%
+}
+.mixer.largest .interface .mixer-button {
+	top: 39%;
+	height: 8%;
+}
+.mixer.largest .interface .mixer-button:after {
+	transform: scale(1.1);
+	transform-origin: 23px 0px;
+}
+
+/* preload images */
+body::after{
+   position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+   content:url('../images/loading5@2x.gif') url('../images/3d-mixer_fader_1@2x.png') url('../images/3d-mixer_fader_1@2x.png') url('../images/3d-mixer_button_1@2x.png') url('../images/3d-mixer_button_on_1@2x.png');
+}

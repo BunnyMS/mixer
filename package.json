@@ -1,0 +1,21 @@
+{
+  "name": "mixitHijack",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "keywords": [
+    "eastwest",
+    "web-mixer",
+    "quantumleap",
+    "mixit"
+  ],
+  "author": "Bunny; EW/QL",
+  "license": "NONE",
+  "dependencies": {
+    "express": "^4.18.2",
+    "got": "^11.8.6"
+  }
+}

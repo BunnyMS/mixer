@@ -1,0 +1,4 @@
+static/.images
+static/js/.mixer.js
+node_modules
+package-lock.json
