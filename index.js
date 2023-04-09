@@ -2,7 +2,7 @@
 const express = require('express');
 const got = require('got');
 const app = express();
-const server = app.listen(80, () => console.log("listening"));
+const server = app.listen(process.env.PORT || 3000, () => console.log("listening"));
 
 const baseurl = "https://bunnyms.github.io/audio";
 const basecat = "https://bunnyms.github.io/";
