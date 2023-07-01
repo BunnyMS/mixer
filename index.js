@@ -21,7 +21,7 @@ app.get("/", async (req, res)=>{
 		mixerDemos+=`			<div id="mixer-${n}-demo" class="mixer-demo" data-title="${escapeHtml(trackjson.name)} - ${escapeHtml(ver.name)}" data-creator="${escapeHtml(trackjson.artists)}">\n`;
 		if(ver.stems.length>0) {
 			ver.stems.forEach(stem=>{
-				mixerDemos+=`				<div class="track" data-title="${escapeHtml(stem.name)}" data-url="${baseurl+stem.file}"></div>\n`;
+				mixerDemos+=`				<div class="track" data-title="${escapeHtml(stem.name)}" data-url="/audio?file=${stem.file}"></div>\n`;
 			});
 		} else {
 			mixerDemos+=`				<div class="track" data-title="Full" data-url="${baseurl+ver.file}"></div>\n`;
@@ -60,6 +60,15 @@ ${mixerDemos}		</div>
 	</html>
 	`;
 	res.send(html)
+	
+});
+
+
+app.get("/audio", async (req, res)=>{
+	//const file = await got.get(baseurl+req.query.file);
+	//console.log(req.query.file);
+	//res.send(file.rawBody);
+	res.redirect(301, baseurl+req.query.file);
 	
 });
 
